@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/web-cinema/static/css/main.db0be309.css",
+    "main.js": "/web-cinema/static/js/main.3b42e197.js",
+    "index.html": "/web-cinema/index.html",
+    "main.db0be309.css.map": "/web-cinema/static/css/main.db0be309.css.map",
+    "main.3b42e197.js.map": "/web-cinema/static/js/main.3b42e197.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db0be309.css",
+    "static/js/main.3b42e197.js"
+  ]
+}
