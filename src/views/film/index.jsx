@@ -23,7 +23,7 @@ export default function Film() {
 					<NavLink
 						to='nowPlaying'
 						className={({ isActive }) => {
-							return isActive ? styles.active : '';
+							return isActive ? styles.active : styles.normal ;
 						}}
 					>
 						正在热映
@@ -33,7 +33,7 @@ export default function Film() {
 					<NavLink
 						to='comingSoon'
 						className={({ isActive }) => {
-							return isActive ? styles.active : '';
+							return isActive ? styles.active : styles.normal;
 						}}
 					>
 						即将上映

@@ -13,16 +13,20 @@ import Film from '../views/film';
 import NowPlaying from '../views/film/NowPlaying';
 import ComingSoon from '../views/film/ComingSoon';
 import Center from '../views/center';
+import Info from '../views/info';
 export default function Router() {
 	return (
 		<Routes>
 			<Route path='/' element={<Redirect to='/film/nowPlaying' />}></Route>
+			<Route path='/film' element={<Redirect to='/film/nowPlaying' />}></Route>
 			<Route path='/film' element={<Film />}>
 				<Route path='nowPlaying' element={<NowPlaying />}></Route>
 				<Route path='comingSoon' element={<ComingSoon />}></Route>
 			</Route>
-			<Route path='/center' element={<Center />}></Route>
 			<Route path='/cinema' element={<Cinema />}></Route>
+			<Route path='/info' element={<Info />}></Route>
+			<Route path='/center' element={<Center />}></Route>
+
 			<Route
 				path='*'
 				element={

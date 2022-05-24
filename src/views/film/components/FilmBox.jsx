@@ -6,6 +6,7 @@
  * @Description: 正在热映组件
  *
  */
+import style from './css/FilmBox.module.scss';
 export default function FilmBox(props) {
 	const { data } = props;
 	return (
@@ -14,6 +15,7 @@ export default function FilmBox(props) {
 				padding: '15px',
 				display: 'flex',
 				justifyContent: 'space-between',
+				alignItems: 'center',
 				borderTop: '1px dash #ccc',
 			}}
 		>
@@ -34,15 +36,15 @@ export default function FilmBox(props) {
 				}}
 			>
 				<div>{data.name}</div>
-				<div>观众评分:{data.grade}</div>
-				<div>
+				<div className={style.label}>观众评分:{data.grade}</div>
+				<div className={style.label}>
 					<span>主演:</span>
 					{data.actors.map((item) => (
-						<span>{item.name}</span>
+						<span key={item.name}>{item.name}</span>
 					))}
 				</div>
-				<div>
-					{data.nation}|{data.runtime}分钟
+				<div className={style.label}>
+					<span>{data.nation}|{data.runtime}分钟</span>
 				</div>
 			</div>
 			<div>

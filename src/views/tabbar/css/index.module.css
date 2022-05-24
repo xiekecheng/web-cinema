@@ -1,0 +1,22 @@
+.tabbar{
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+	text-align: center;
+	height: 49px;
+	line-height: 49px;
+}
+.tabbar >li{
+	flex: 1;
+}
+.tabbar >li >a {
+	text-decoration: none;
+}
+.active{
+	color: #ff5f16 !important;
+}
+.normal{
+	color: #797d82;
+}

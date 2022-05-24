@@ -44,7 +44,7 @@ export default function FilmBox(props) {
 				<div>
 					<span>主演:</span>
 					{data.actors.map((item) => (
-						<span>{item.name}</span>
+						<span key={item.name}>{item.name}</span>
 					))}
 				</div>
 				<div>

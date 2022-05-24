@@ -28,3 +28,15 @@ export function getComingSoonList() {
 		}
 	});
 }
+
+export function fetchCountAPI(mount=1) {
+	return new Promise(resolve=>{
+		setTimeout(()=>{
+			resolve({
+				data:{
+					value:mount
+				}
+			})
+		},1000)
+	})
+}

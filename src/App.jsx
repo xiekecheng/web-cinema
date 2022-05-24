@@ -8,11 +8,13 @@
  */
 import './App.css';
 import MRouter from './router';
+import TabBar from './views/tabbar';
 import { BrowserRouter } from 'react-router-dom';
 function App() {
 	return (
 		<BrowserRouter>
 			<MRouter />
+			<TabBar />
 		</BrowserRouter>
 	);
 }

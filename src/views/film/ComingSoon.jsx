@@ -14,7 +14,7 @@ export default function ComingSoon() {
 	return (
 		<div>
 			{filmList.map((item) => (
-				<FilmBox data={item} />
+				<FilmBox data={item} key={item.filmId} />
 			))}
 		</div>
 	);

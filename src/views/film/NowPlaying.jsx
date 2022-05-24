@@ -14,7 +14,7 @@ export default function NowPlaying() {
 	return (
 		<div>
 			{filmList.map((item, index) => (
-				<FilmBox key={index} data={item}></FilmBox>
+				<FilmBox key={item.filmId} data={item}></FilmBox>
 			))}
 		</div>
 	);
