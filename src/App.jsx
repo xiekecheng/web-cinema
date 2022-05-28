@@ -10,11 +10,13 @@ import './App.css';
 import MRouter from './router';
 import TabBar from './views/tabbar';
 import { BrowserRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 function App() {
+	const isShowTabbar = useSelector(state => state.state.isShowTabbar);
 	return (
 		<BrowserRouter>
 			<MRouter />
-			<TabBar />
+			{isShowTabbar&&<TabBar />}
 		</BrowserRouter>
 	);
 }
