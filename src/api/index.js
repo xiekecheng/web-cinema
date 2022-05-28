@@ -6,9 +6,9 @@
  * @Description: api接口
  * 
  */
-import request from '../utils/request';
+import fetch from '../utils/request';
 export function getNowPlayingList() {
-	return request({
+	return fetch({
 		url: 'https://m.maizuo.com/gateway?cityId=440300&pageNum=1&pageSize=10&type=1&k=2874356',
 		method: 'get',
 		headers:{
@@ -19,7 +19,7 @@ export function getNowPlayingList() {
 }
 
 export function getComingSoonList() {
-	return request({
+	return fetch({
 		url: 'https://m.maizuo.com/gateway?cityId=440300&pageNum=1&pageSize=10&type=2&k=7449014',
 		method: 'get',
 		headers:{
@@ -27,6 +27,17 @@ export function getComingSoonList() {
 			'X-Host': 'mall.film-ticket.film.list'
 		}
 	});
+}
+
+export function fetchFilmDetail(id,key){
+	return fetch({
+		url:`https://m.maizuo.com/gateway?filmId=${id}&k=${key}`,
+		method:'get',
+		headers:{
+			'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.2.0","e":"1653575582389381735055361","bc":"440300"}',
+			'X-Host': 'mall.film-ticket.film.info'
+		}
+	})
 }
 
 export function fetchCountAPI(mount=1) {
