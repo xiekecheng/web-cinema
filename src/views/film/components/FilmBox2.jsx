@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 /*
  * @Author: github.com/xiekecheng
  * @Date: 2022-05-15 21:12:16
@@ -8,6 +10,11 @@
  */
 export default function FilmBox(props) {
 	const { data } = props;
+	let navigate = useNavigate()
+	// 跳转详情页
+	const goDetail = ()=>{
+		navigate(`/detail/${data.filmId}`)
+	}
 	const buyStyle = {
 		border: '1px solid #ff5f16',
 		padding: '5px',

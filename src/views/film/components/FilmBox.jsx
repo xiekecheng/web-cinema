@@ -1,14 +1,13 @@
-/*
- * @Author: github.com/xiekecheng
- * @Date: 2022-05-15 21:12:16
- * @LastEditTime: 2022-05-15 21:45:47
- * @FilePath: /web-cinema/src/views/film/components/FilmBox.jsx
- * @Description: 正在热映组件
- *
- */
+import { useNavigate } from 'react-router-dom';
 import style from './css/FilmBox.module.scss';
+import FilmDescription from './FilmDescription';
 export default function FilmBox(props) {
 	const { data } = props;
+	let navigate = useNavigate()
+	// 跳转至详情页
+	const goDetail = ()=>{
+		navigate(`/detail/${data.filmId}`)
+	}
 	return (
 		<div
 			style={{
@@ -19,7 +18,7 @@ export default function FilmBox(props) {
 				borderTop: '1px dash #ccc',
 			}}
 		>
-			<div className='img-wrap'>
+			<div className='img-wrap' onClick={()=>goDetail()}>
 				<img
 					src={data.poster}
 					alt=''
@@ -35,17 +34,7 @@ export default function FilmBox(props) {
 					paddingLeft: '10px',
 				}}
 			>
-				<div>{data.name}</div>
-				<div className={style.label}>观众评分:{data.grade}</div>
-				<div className={style.label}>
-					<span>主演:</span>
-					{data.actors.map((item) => (
-						<span key={item.name}>{item.name}</span>
-					))}
-				</div>
-				<div className={style.label}>
-					<span>{data.nation}|{data.runtime}分钟</span>
-				</div>
+				<FilmDescription data={data}/>
 			</div>
 			<div>
 				<span
