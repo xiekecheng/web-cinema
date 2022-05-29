@@ -24,9 +24,6 @@ function useFilmList() {
 	const [filmList, setFilmList] = useState([]);
 	useEffect(() => {
 		async function getData() {
-			// getComingSoonList().then((res) => {
-			// 	setFilmList(res.data.films);
-			// });
 			const res = await getComingSoonList();
 			setFilmList(res.data.films);
 		}
