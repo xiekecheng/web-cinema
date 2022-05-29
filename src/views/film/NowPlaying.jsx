@@ -9,14 +9,23 @@
 import React, { useEffect, useState } from 'react';
 import { getNowPlayingList } from '../../api';
 import FilmBox from './components/FilmBox';
+import { Skeleton } from 'antd-mobile';
 export default function NowPlaying() {
 	const filmList = useFilmList();
 	return (
-		<div>
-			{filmList.map((item, index) => (
-				<FilmBox key={item.filmId} data={item}></FilmBox>
-			))}
-		</div>
+		<>
+			<div>
+				{filmList.map((item, index) => (
+					<FilmBox key={item.filmId} data={item}></FilmBox>
+				))}
+			</div>
+			{!filmList.length && (
+				<div>
+					<Skeleton.Title animated />
+					<Skeleton.Paragraph lineCount={10} animated />
+				</div>
+			)}
+		</>
 	);
 }
 

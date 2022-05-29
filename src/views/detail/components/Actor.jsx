@@ -5,12 +5,11 @@ export default function Actors(props) {
 	return (
 		<div style={{ padding: '10px' }}>
 			<h3>演职人员</h3>
-			<div style={{ display: 'flex', 'overflow-x': 'auto' }}>
+			<div className={style.actors} style={{ display: 'flex', 'overflowX': 'auto' }}>
 				{actors?.map((actor) => (
 					<ActorBox key={actor.name} actor={actor} />
 				))}
 			</div>
-			<div className={style['buy-ticket']}>选座购票</div>
 		</div>
 	);
 }
@@ -24,7 +23,7 @@ function ActorBox(props) {
 					display: 'flex',
 					flexDirection: 'column',
 					justifyContent: 'space-around',
-					marginRight:'10px',
+					marginRight: '10px',
 					alignItems: 'center',
 				}}
 			>
@@ -35,8 +34,8 @@ function ActorBox(props) {
 						alt={actor.name}
 					/>
 				</li>
-				<li style={{fontSize:'12px',marginTop:'12px'}}>{actor.name}</li>
-				<lis style={{fontSize:'10px'}}>{actor.role}</lis>
+				<li style={{ fontSize: '12px', marginTop: '12px' }}>{actor.name}</li>
+				<li style={{ fontSize: '10px' }}>{actor.role}</li>
 			</ul>
 		</>
 	);

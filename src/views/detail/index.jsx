@@ -30,17 +30,18 @@ export default function Detail(props) {
 							display: 'flex',
 							flexDirection: 'row',
 							width: '100%',
-							overflow: 'auto',
+							overflowX: 'auto',
 						}}
 					>
-						{filmDetail.photos?.map((photo) => (
-							<li>
+						{filmDetail.photos?.map((photo,index) => (
+							<li key={index}>
 								<img src={photo} alt='' style={{ height: '150px',width:'150px',marginRight:'10px' }} />
 							</li>
 						))}
 					</ul>
 				</div>
 			</div>
+			<div className={style['buy-ticket']}>选座购票</div>
 		</>
 	);
 }
