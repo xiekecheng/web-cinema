@@ -9,6 +9,7 @@
 import React, { useEffect, useState } from 'react';
 import FilmBox from './components/FilmBox2';
 import { getComingSoonList } from '../../api';
+import { Skeleton } from 'antd-mobile';
 export default function ComingSoon() {
 	const filmList = useFilmList();
 	return (
@@ -16,6 +17,12 @@ export default function ComingSoon() {
 			{filmList.map((item) => (
 				<FilmBox data={item} key={item.filmId} />
 			))}
+			{!filmList.length && (
+				<div>
+					<Skeleton.Title animated />
+					<Skeleton.Paragraph lineCount={10} animated />
+				</div>
+			)}
 		</div>
 	);
 }
